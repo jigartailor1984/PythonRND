@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package breezedemo;
+
+service BreezeApi {
+    rpc Connect (ConnectRequest) returns (ConnectResponse);
+    
+    rpc GetCustomerDetails (CustomerRequest) returns (ApiResponse);
+
+    rpc GetDematHolding (Empty) returns (ApiResponse);
+
+    rpc GetLiveStreamingData (Empty) returns (stream LiveStreamData);
+
+    rpc SubscribeOrderNotification (Empty) returns (SubscribeResponse);
+
+    rpc UnsubscribeOrderNotification (Empty) returns (UnsubscribeResponse);
+
+    rpc GetNames (GetNamesRequest) returns (GetNamesResponse);
+}
+
+message Empty {
+}
+
+message SubscribeResponse {
+    string message=1;
+}
+
+message UnsubscribeResponse {
+    string message=1;
+}
+
+
+message GetNamesResponse {
+    string ExchangeCode = 1;
+    string ExchangeStockCode = 2;
+    string ISecStockCode = 3;
+    string ISecToken = 4;
+    string CompanyName = 5;
+    string ISecTokenLevel1 = 6;
+    string ISecTokenLevel2 = 7;
+}
+message GetNamesRequest {
+    string ExchangeCode = 1;
+    string StockCode = 2;
+}
+
+message LiveStreamData {
+    string Data = 1;
+}
+
+message CustomerRequest {
+    string ApiSession = 1;
+}
+
+message ApiResponse {
+    string Success = 1;
+    int32 Status = 2;
+    string Error = 3;
+}
+
+message ConnectRequest {
+    string AppKey = 1;
+    string SecretKey = 2;
+    string ApiSession = 3;
+}
+
+message ConnectResponse {
+    string message = 1;
+}
