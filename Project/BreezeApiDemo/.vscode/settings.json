@@ -1,0 +1,47 @@
+{
+    "appService.zipIgnorePattern": [
+        "__pycache__{,/**}",
+        "*.py[cod]",
+        "*$py.class",
+        ".Python{,/**}",
+        "build{,/**}",
+        "develop-eggs{,/**}",
+        "dist{,/**}",
+        "downloads{,/**}",
+        "eggs{,/**}",
+        ".eggs{,/**}",
+        "lib{,/**}",
+        "lib64{,/**}",
+        "parts{,/**}",
+        "sdist{,/**}",
+        "var{,/**}",
+        "wheels{,/**}",
+        "share/python-wheels{,/**}",
+        "*.egg-info{,/**}",
+        ".installed.cfg",
+        "*.egg",
+        "MANIFEST",
+        ".env{,/**}",
+        ".venv{,/**}",
+        "env{,/**}",
+        "venv{,/**}",
+        "ENV{,/**}",
+        "env.bak{,/**}",
+        "venv.bak{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/d6f8a724-6748-4cb1-8238-33aa76656f5f/resourceGroups/BreezeAPIService_group/providers/Microsoft.Web/sites/BreezeAPIService",
+    "appService.deploySubpath": ".",
+    "containerApps.deploymentConfigurations": [
+        {
+            "label": "breezeapidemo",
+            "type": "AcrDockerBuildRequest",
+            "dockerfilePath": "dockerfile",
+            "srcPath": ".",
+            "envPath": "",
+            "resourceGroup": "jt-container-env",
+            "containerApp": "breezeapidemo",
+            "containerRegistry": "jtcontainerenv879f24"
+        }
+    ]
+}
